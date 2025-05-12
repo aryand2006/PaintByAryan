@@ -1,0 +1,281 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f0f0;
+    height: 100vh;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+.toolbar {
+    width: 220px;
+    background-color: #eaeaea;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.tool-section {
+    margin-bottom: 20px;
+}
+
+.tool-section h3 {
+    margin-bottom: 10px;
+    color: #333;
+    font-size: 16px;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 5px;
+}
+
+.tool-items {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+}
+
+.tool {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    background-color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.tool:hover {
+    background-color: #e0e0e0;
+}
+
+.tool.active {
+    background-color: #007bff;
+    color: white;
+}
+
+.color-picker {
+    margin-bottom: 10px;
+}
+
+#colorPicker {
+    width: 100%;
+    height: 40px;
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.color-palette {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 8px;
+}
+
+.color {
+    height: 30px;
+    border-radius: 5px;
+    cursor: pointer;
+    border: 1px solid #ccc;
+}
+
+.color.active {
+    transform: scale(0.9);
+    box-shadow: 0 0 0 2px #007bff;
+}
+
+.tool-options {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.option {
+    display: flex;
+    flex-direction: column;
+}
+
+.option label {
+    margin-bottom: 5px;
+    font-size: 14px;
+}
+
+.option input[type="range"] {
+    width: 100%;
+}
+
+.action-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 8px;
+}
+
+.action-buttons button {
+    padding: 8px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.action-buttons button:hover {
+    background-color: #e0e0e0;
+}
+
+.canvas-container {
+    flex-grow: 1;
+    background-color: #f9f9f9;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: auto;
+    padding: 20px;
+}
+
+#canvas {
+    background-color: white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    cursor: crosshair;
+}
+
+.layers-panel {
+    width: 180px;
+    background-color: #eaeaea;
+    padding: 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.layers-list {
+    flex-grow: 1;
+    overflow-y: auto;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    background-color: white;
+    height: 300px;
+}
+
+.layer {
+    padding: 8px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+}
+
+.layer.active {
+    background-color: #e3f2fd;
+}
+
+.layer-visibility {
+    margin-right: 8px;
+    cursor: pointer;
+}
+
+.layer-name {
+    flex-grow: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.layer-actions {
+    display: flex;
+    justify-content: space-between;
+}
+
+.layer-actions button {
+    flex: 1;
+    padding: 8px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0 2px;
+}
+
+.layer-actions button:hover {
+    background-color: #e0e0e0;
+}
+
+.recent-colors {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px;
+    margin-top: 8px;
+}
+
+.recent-color {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    border: 1px solid #ccc;
+    cursor: pointer;
+}
+
+/* Shape selection styling */
+.shape-controls {
+    padding: 10px 0;
+}
+
+.shape-controls button {
+    width: 100%;
+    padding: 8px;
+    margin-top: 10px;
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
+.shape-controls button:hover {
+    background-color: #c0392b;
+}
+
+/* Selection handles */
+.selection-handle {
+    width: 8px;
+    height: 8px;
+    background-color: #007bff;
+    border: 1px solid white;
+    position: absolute;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 100;
+}
+
+.rotation-handle {
+    width: 8px;
+    height: 8px;
+    background-color: #ff9800;
+    border: 1px solid white;
+    position: absolute;
+    border-radius: 50%;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    z-index: 100;
+}
+
+.selection-box {
+    position: absolute;
+    border: 1px dashed #007bff;
+    pointer-events: none;
+    z-index: 90;
+}
