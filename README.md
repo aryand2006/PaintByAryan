@@ -1,4 +1,4 @@
-# MS Paint by Aryan
+# Paint by Aryan
 _A modern, feature-rich web-based paint application with layers and advanced shape editing_
 
 ## ✨ Features
@@ -40,12 +40,12 @@ _A modern, feature-rich web-based paint application with layers and advanced sha
 
 1. Clone the repository:
    ```
-   git clone https://github.com/aryand2006/MSPaintByAryan.git
+   git clone https://github.com/aryand2006/PaintByAryan.git
    ```
 
 2. Open the project directory:
    ```
-   cd MSPaintByAryan
+   cd PaintByAryan
    ```
 
 3. Open `index.html` in your browser:
@@ -79,7 +79,7 @@ _A modern, feature-rich web-based paint application with layers and advanced sha
 ## 📂 File Structure
 
 ```
-MSPaintByAryan/
+PaintByAryan/
 │
 ├── index.html      # Main HTML file with application structure
 ├── style.css       # CSS styles for the application
